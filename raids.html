@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Defense - Raids</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Local Defense</h1>
+    <p>Warmane Onyxia Guild</p>
+
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="raids.html" class="active"><i class="fas fa-sword"></i> Raid Sign Ups</a>
+      <a href="builds.html"><i class="fas fa-tools"></i> Guides</a>
+      <a href="armory.html"><i class="fas fa-search"></i> Armory</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </nav>
+  </header>
+
+  <div id="wowQuotePopup" class="wow-quote-popup hidden">
+    <div class="wow-quote-card">
+      <button id="closeQuotePopup" class="close-quote-btn" aria-label="Close quote popup">✕</button>
+
+      <div class="quote-card-top"></div>
+
+      <div class="wow-quote-inner">
+        <div class="quote-scroll">
+          <div id="wowQuoteText" class="quote-text"></div>
+          <div id="wowQuoteSpeaker" class="quote-speaker"></div>
+        </div>
+      </div>
+
+      <div class="quote-card-bottom"></div>
+    </div>
+  </div>
+
+  <main class="page-content">
+    <section class="signup-section">
+      <h2>Raid Signup System</h2>
+      <p>Sign up your character for upcoming guild raids.</p>
+
+      <form id="raidSignupForm" class="signup-form">
+        <div class="form-container">
+          <input type="text" id="characterName" placeholder="Character Name" required />
+
+          <select id="characterClass" required>
+            <option value="">Select Class</option>
+            <option value="Warrior">Warrior</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Hunter">Hunter</option>
+            <option value="Rogue">Rogue</option>
+            <option value="Priest">Priest</option>
+            <option value="Death Knight">Death Knight</option>
+            <option value="Shaman">Shaman</option>
+            <option value="Mage">Mage</option>
+            <option value="Warlock">Warlock</option>
+            <option value="Druid">Druid</option>
+          </select>
+
+          <div class="spec-picker">
+            <select id="characterSpec" required>
+              <option value="">Select Spec</option>
+            </select>
+            <div id="specPreview" class="spec-preview"></div>
+          </div>
+
+          <select id="characterRole" required>
+            <option value="">Select Role</option>
+            <option value="Tank">Tank</option>
+            <option value="Healer">Healer</option>
+            <option value="Melee DPS">Melee DPS</option>
+            <option value="Ranged DPS">Ranged DPS</option>
+          </select>
+
+          <select id="raidName" required>
+            <option value="">Select Raid</option>
+            <option value="Naxxramas 10">Naxxramas 10</option>
+            <option value="Naxxramas 25">Naxxramas 25</option>
+            <option value="Obsidian Sanctum 10">Obsidian Sanctum 10</option>
+            <option value="Obsidian Sanctum 25">Obsidian Sanctum 25</option>
+            <option value="Eye of Eternity 10">Eye of Eternity 10</option>
+            <option value="Eye of Eternity 25">Eye of Eternity 25</option>
+          </select>
+
+          <button type="submit">Submit Signup</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="roster-section">
+      <h2>Current Raid Signups</h2>
+
+      <div class="summary-filter">
+        <label for="raidFilter">View Summary For:</label>
+        <select id="raidFilter">
+          <option value="Naxxramas 10">Naxxramas 10</option>
+          <option value="Naxxramas 25">Naxxramas 25</option>
+          <option value="Obsidian Sanctum 10">Obsidian Sanctum 10</option>
+          <option value="Obsidian Sanctum 25">Obsidian Sanctum 25</option>
+          <option value="Eye of Eternity 10">Eye of Eternity 10</option>
+          <option value="Eye of Eternity 25">Eye of Eternity 25</option>
+        </select>
+      </div>
+
+      <div class="raid-summary" id="raidSummary">
+        <div class="summary-card">
+          <span class="summary-label">Tanks</span>
+          <span class="summary-value" id="tankCount">0</span>
+        </div>
+
+        <div class="summary-card">
+          <span class="summary-label">Healers</span>
+          <span class="summary-value" id="healerCount">0</span>
+        </div>
+
+        <div class="summary-card">
+          <span class="summary-label">Melee DPS</span>
+          <span class="summary-value" id="meleeCount">0</span>
+        </div>
+
+        <div class="summary-card">
+          <span class="summary-label">Ranged DPS</span>
+          <span class="summary-value" id="rangedCount">0</span>
+        </div>
+
+        <div class="summary-card total-card">
+          <span class="summary-label">Total Players</span>
+          <span class="summary-value" id="totalCount">0</span>
+        </div>
+      </div>
+
+      <div id="signupList" class="signup-list">
+        <p class="empty-message">No signups yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="raids.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

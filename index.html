@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Defense</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Local Defense</h1>
+    <p>Warmane Onyxia Guild</p>
+
+    <nav>
+      <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="raids.html"><i class="fas fa-sword"></i> Raid Sign Ups</a>
+      <a href="builds.html"><i class="fas fa-tools"></i> Guides</a>
+      <a href="armory.html"><i class="fas fa-search"></i> Armory</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </nav>
+  </header>
+
+  <section class="top-banner">
+    <img src="assets/images/ulduar-banner.png.png" alt="Ulduar banner">
+  </section>
+
+  <div id="wowQuotePopup" class="wow-quote-popup hidden">
+    <div class="wow-quote-card">
+      <button id="closeQuotePopup" class="close-quote-btn" aria-label="Close quote popup">✕</button>
+
+      <div class="quote-card-top"></div>
+
+      <div class="wow-quote-inner">
+        <div class="quote-scroll">
+          <div id="wowQuoteText" class="quote-text"></div>
+          <div id="wowQuoteSpeaker" class="quote-speaker"></div>
+        </div>
+      </div>
+
+      <div class="quote-card-bottom"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome Adventurer</h2>
+      <p>This is the official website for the Local Defense guild.</p>
+      <button id="joinBtn">Join the Guild</button>
+    </section>
+
+    <section class="hero chat-section">
+      <h2>Guild Chancellor</h2>
+      <p>Ask the guild assistant about raids, specs, consumables, and more.</p>
+
+      <div class="chat-box">
+        <div id="chatMessages" class="chat-messages">
+          <div class="chat-message bot-message">
+            <strong>Guild Chancellor:</strong> Greetings, champion. Ask and I shall answer.
+          </div>
+        </div>
+
+        <div class="chat-input-row">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask something about raids, classes, or the guild..."
+          />
+          <button id="sendChatBtn">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
